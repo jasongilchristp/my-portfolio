@@ -1,0 +1,4 @@
+sass:
+  load_paths:
+    - static/css
+    - static/js

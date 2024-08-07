@@ -8,8 +8,6 @@ export default function NavBar() {
 
   const [location] = useLocation();
   console.log(location); // Check if this logs the current location
- // Correctly destructuring the location
-
   const trackScreenWidth = () => {
     const width = window.innerWidth;
     setScreenWidth(width);

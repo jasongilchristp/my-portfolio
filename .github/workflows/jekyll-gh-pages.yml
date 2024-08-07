@@ -28,13 +28,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        
+      - name: Display directory structure
+        run: ls -R
+
+      - name: Display Jekyll configuration
+        run: cat _config.yml
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./static
+          source: ./
           destination: ./_site
+          
+      - name: Check for build errors
+        run: |
+          echo "Build complete, checking for errors..."
+          ls -R _site
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

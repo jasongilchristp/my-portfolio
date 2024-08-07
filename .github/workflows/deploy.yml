@@ -3,20 +3,15 @@ name: Deploy to Netlify
 on:
   push:
     branches:
-      - main  # Change this to your default branch
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'  # Specify the Node.js version
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Install dependencies
         run: npm install
@@ -25,8 +20,8 @@ jobs:
         run: npm run build
 
       - name: Deploy to Netlify
-        uses: netlify/actions/deploy@v1.1.0
+        uses: netlify/actions/deploy@v2.2.0
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DIR: './build'
+          build_directory: 'build'

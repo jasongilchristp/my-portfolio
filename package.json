@@ -1,6 +1,6 @@
 {
   "name": "my-portfolio",
-  "homepage": "https://jasongilchristp.github.io/mp-portfolio",
+  "homepage": "https://github.com/jasongilchristp/my-portfolio.git",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

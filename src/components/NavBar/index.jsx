@@ -3,19 +3,16 @@ import { Link, useLocation } from "wouter";
 import './style.css';
 
 export default function NavBar() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(window.innerWidth > 800);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   const [location] = useLocation();
   console.log(location); // Check if this logs the current location
+
   const trackScreenWidth = () => {
     const width = window.innerWidth;
     setScreenWidth(width);
-    if (width > 800) {
-      setOpen(true);
-    } else {
-      setOpen(false);
-    }
+    setOpen(width > 800);
   };
 
   const handleClose = () => {
@@ -52,14 +49,14 @@ export default function NavBar() {
           <img
             src="https://github.com/DwinaTech/public-images/blob/main/menu-bars.png?raw=true"
             alt="menu bars"
-            style={{ opacity: !open ? 1 : 0 }}
-            onClick={() => setOpen(!open)}
+            style={{ opacity: open ? 0 : 1 }}
+            onClick={() => setOpen(true)}
           />
           <img
             src="https://github.com/DwinaTech/public-images/blob/main/cross-menu-icon.png?raw=true"
             alt="menu cross"
-            style={{ opacity: !open ? 0 : 1 }}
-            onClick={() => setOpen(!open)}
+            style={{ opacity: open ? 1 : 0 }}
+            onClick={() => setOpen(false)}
           />
           <ul style={{ left: open ? "0" : "-100vw" }}>
             <li>

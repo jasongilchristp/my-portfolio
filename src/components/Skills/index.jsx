@@ -19,7 +19,7 @@ export default function Skills() {
           <ul>
             <li>Machine Learning</li>
             <li>Statistics</li>
-            <li>Data Analysis</li>
+            <li>Data Analysis (Python)</li>
             <li>Data Visualization (Tableau)</li>
           </ul>
         </div>

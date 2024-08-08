@@ -1,7 +1,7 @@
 import { Router, Route, Switch } from "wouter";
 import './App.css';
 
-import Home from"./components/Home";
+import Home from "./components/Home";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import NavBar from "./components/NavBar";
@@ -11,7 +11,7 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router base="/my-portfolio">
       <div className="app">
         <NavBar />
         <Switch>
@@ -24,7 +24,6 @@ function App() {
         <Footer />
       </div>
     </Router>
-
   );
 }
 

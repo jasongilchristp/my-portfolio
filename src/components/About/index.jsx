@@ -1,32 +1,100 @@
-import React from "react";
 import "./style.css";
+
+const focusAreas = [
+  "Agentic AI systems",
+  "RAG applications",
+  "LLM workflows",
+  "AI automation",
+];
+
+const coreSkills = [
+  "Python",
+  "LangChain",
+  "LangGraph",
+  "RAG",
+  "Pydantic",
+  "SQL",
+  "APIs",
+  "Git",
+  "Docker",
+];
 
 export default function About() {
   return (
-    <div className="about">
-      <h1>About Me</h1>
-      <h3>
-        Hello! I'm Jason Gilchrist P, a 27-year-old aspiring Data Scientist based in the dynamic city of Hyderabad. With a robust background in CRM Application Development, I'm eager to dive deeper into the world of data science.
-      </h3>
-      <p>
-        I hold a Bachelor of Technology in Computer Science and Engineering from the esteemed Presidency University in Bangalore, where I achieved a CGPA of 7.33. Before that, I excelled in my Board of Intermediate Education at Matrix IIT Academy in Guntur with a score of 79.1%, and completed my SSC at Sri Chaitanya Techno School in Piduguralla with a GPA of 9.2.
-      </p>
-      <br />
-      <p>
-        I'm passionate about exploring new technologies and am committed to continuous learning. My interests are deeply rooted in Data Science and Data Analytics, and I am excited about leveraging these areas in my future endeavors. If you’re searching for a motivated and innovative developer ready to make an impact, you’ve come to the right place!
-      </p>
-      <br />
-      <h3>Summary:</h3>
-      <p>
-        An aspiring Data Scientist with a solid foundation in CRM Application Development. Skilled in SQL, data migration, and cloud solutions, with practical experience in data analysis, machine learning, and data visualization. Known for leveraging analytical skills and technical expertise to drive insightful data-driven decisions. Enthusiastic about learning and eager to contribute to cutting-edge data science projects.
-      </p>
-      <br />
-      <h3>My Strengths:</h3>
-      <ul>
-        <li>Rapid learner with a strong desire for knowledge and a knack for pushing boundaries.</li>
-        <li>Embraces challenges and tackles complex tasks with enthusiasm and perseverance.</li>
-        <li>Collaborative team player who thrives in team settings, whether through brainstorming sessions or coding marathons.</li>
-      </ul>
-    </div>
+    <section className="about" aria-labelledby="about-title">
+      <header className="about__intro">
+        <p className="about__eyebrow">About me</p>
+        <h1 id="about-title">
+          Building towards practical Agentic AI systems
+        </h1>
+        <p className="about__lead">
+          I am Jason Gilchrist P, a Hyderabad-based developer transitioning
+          from CRM application development into Generative AI and Agentic AI
+          systems engineering.
+        </p>
+      </header>
+
+      <div className="about__content">
+        <section aria-labelledby="background-title">
+          <h2 id="background-title">Background</h2>
+          <p>
+            As a CRM Application Developer at FINT Solutions, I rebuilt a Wire
+            Transfer Case Management System with enhanced CRUD functionality
+            and automated email notifications. I also worked on the CCRs cloud
+            and data-migration project, supporting reliable delivery through
+            unit testing and stakeholder collaboration.
+          </p>
+          <p>
+            Earlier internships in CRM development, blockchain application
+            development with C++, and robotics projects built my interest in
+            software systems, automation, testing and data-driven problem
+            solving.
+          </p>
+        </section>
+
+        <section aria-labelledby="direction-title">
+          <h2 id="direction-title">Current direction</h2>
+          <p>
+            After a health-related career break, I have been steadily
+            upskilling in data science, machine learning, Generative AI and
+            Agentic AI. I am currently enrolled in the Agentic AI 3.0
+            programme and building hands-on projects as I prepare to return to
+            full-time technology roles.
+          </p>
+          <p>
+            My focus is on reliable AI agents and RAG-based applications that
+            use structured outputs, tool calling, retrieval and API
+            integrations to support real business workflows.
+          </p>
+        </section>
+
+        <section aria-labelledby="focus-title">
+          <h2 id="focus-title">What I am building towards</h2>
+          <ul className="about__list">
+            {focusAreas.map((area) => (
+              <li key={area}>{area}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section aria-labelledby="skills-title">
+          <h2 id="skills-title">Core tools</h2>
+          <ul className="about__skills">
+            {coreSkills.map((skill) => (
+              <li key={skill}>{skill}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section aria-labelledby="opportunities-title">
+          <h2 id="opportunities-title">Open to opportunities</h2>
+          <p>
+            I am preparing for entry-level opportunities in Agentic AI,
+            Generative AI, LLM engineering and AI automation across Hyderabad,
+            Bengaluru and remote teams.
+          </p>
+        </section>
+      </div>
+    </section>
   );
 }

@@ -1,5 +1,5 @@
 import { Router, Route, Switch } from "wouter";
-import './App.css';
+import "./App.css";
 
 import Home from "./components/Home";
 import Footer from "./components/Footer";
@@ -14,13 +14,24 @@ function App() {
     <Router base="/my-portfolio">
       <div className="app">
         <NavBar />
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/skills" component={Skills} />
-          <Route path="/works" component={Works} />
-          <Route path="/contact" component={Contact} />
-        </Switch>
+
+        <main className="content">
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/skills" component={Skills} />
+            <Route path="/works" component={Works} />
+            <Route path="/contact" component={Contact} />
+
+            <Route>
+              <section className="not-found">
+                <h1>Page not found</h1>
+                <p>The page you are looking for does not exist.</p>
+              </section>
+            </Route>
+          </Switch>
+        </main>
+
         <Footer />
       </div>
     </Router>

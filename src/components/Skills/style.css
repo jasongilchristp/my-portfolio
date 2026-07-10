@@ -1,34 +1,110 @@
 .skills {
-    flex-grow:1;
+  width: min(100% - 2rem, 1100px);
+  margin: 0 auto;
+  padding: 4rem 0;
 }
 
-.skills {
-    margin-bottom: 20px;
+.skills__intro {
+  max-width: 760px;
+  margin-bottom: 2.5rem;
 }
 
-.content {
-    display: grid;
-    font-size: 18px;
+.skills__eyebrow {
+  margin: 0 0 0.5rem;
+  color: #2563eb;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.skills__intro h1 {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.skills__lead {
+  margin: 1rem 0 0;
+  color: #475569;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.skills__card {
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgb(15 23 42 / 0.05);
+}
+
+.skills__card h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.skills__card > p {
+  margin: 0.6rem 0 1.25rem;
+  color: #64748b;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skills__list li {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1e3a8a;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.skills__note {
+  margin: 2rem 0 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid #2563eb;
+  border-radius: 0 8px 8px 0;
+  background: #eff6ff;
+  color: #475569;
+  line-height: 1.65;
+}
+
+@media (max-width: 700px) {
+  .skills {
+    padding: 3rem 0;
+  }
+
+  .skills__grid {
     grid-template-columns: 1fr;
-}
+  }
 
-.content div {
-    margin-bottom: 25px;
-}
-
-.content strong {
-    line-height: 25px;
-    padding-bottom: 15px;
-    display: block;
-}
-
-.content li {
-    margin: 0;
-    margin-bottom: 10px;
-}
-
-@media (min-width: 800px){
-    .content{
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+  .skills__card {
+    min-height: auto;
+    padding: 1.25rem;
+  }
 }

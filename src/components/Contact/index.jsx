@@ -1,31 +1,65 @@
-import React from "react";
 import "./style.css";
+
+const contactLinks = [
+  {
+    label: "Email",
+    value: "jason.gilchrist.p@gmail.com",
+    href: "mailto:jason.gilchrist.p@gmail.com",
+  },
+  {
+  label: "LinkedIn",
+  value: "linkedin.com/in/paladugujasongilchrist",
+  href: "https://www.linkedin.com/in/paladugujasongilchrist",
+  },
+  {
+    label: "GitHub",
+    value: "github.com/jasongilchristp",
+    href: "https://github.com/jasongilchristp",
+  },
+];
 
 export default function Contact() {
   return (
-    <div className="contact">
-      <h1>Get in touch with me!</h1>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.910163187105!2d79.87608531465719!3d16.480085988628247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb98131b0c28fd874!2zMTbCsDI4JzQ4LjMiTiA3OcKwNTInNDEuOCJF!5e0!3m2!1sen!2sin!4v1638802594573!5m2!1sen!2sin"
-        width="400"
-        height="300"
-        frameborder="0"
-        style={{ border: 0 }}
-        title="Find me here!"
-        allowfullscreen=""
-        aria-hidden="false"
-        tabindex="0"
-      ></iframe>
-      <h4>Phone</h4>
-      <p>Call or text me at: +91 8660056268</p>
-      <h4>Email</h4>
-      <p>Shoot me an email at: jason.gilchrist.p@gmail.com</p>
+    <section className="contact" aria-labelledby="contact-title">
+      <header className="contact__intro">
+        <p className="contact__eyebrow">Contact</p>
+        <h1 id="contact-title">Let&apos;s connect</h1>
+        <p className="contact__lead">
+          I am open to entry-level opportunities in Agentic AI, Generative AI,
+          LLM engineering and AI automation.
+        </p>
+      </header>
 
-      <h4>Address</h4>
-      <p>
-        Find me at: H.No.: 8-67/3b, Opposite Kotha's Apartments, Railway Station
-        Road, Piduguralla - 522413
-      </p>
-    </div>
+      <div className="contact__content">
+        <p>
+          If you would like to discuss a role, project or collaboration, please
+          get in touch. I am currently based in Hyderabad and open to
+          opportunities in Hyderabad, Bengaluru and remote teams.
+        </p>
+
+        <ul className="contact__list">
+          {contactLinks.map(({ label, value, href }) => (
+            <li key={label}>
+              <span>{label}</span>
+              {href.startsWith("[") ? (
+                <span className="contact__placeholder">{value}</span>
+              ) : (
+                <a
+                  href={href}
+                  target={label === "Email" ? undefined : "_blank"}
+                  rel={label === "Email" ? undefined : "noreferrer"}
+                >
+                  {value}
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        <p className="contact__note">
+          I aim to respond to professional enquiries within 1–2 working days.
+        </p>
+      </div>
+    </section>
   );
 }

@@ -98,7 +98,7 @@ export default function NavBar() {
             <li>
               <Link
                 onClick={handleClose}
-                style={{ color: location === "/contact" ? "#cc3300" : "" }}
+                style={{ color: location === "/contact" ? "#1d4ed8" : "" }}
                 href="/contact"
               >
                 Contact

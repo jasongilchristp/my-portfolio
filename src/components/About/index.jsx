@@ -89,7 +89,7 @@ export default function About() {
         <section aria-labelledby="opportunities-title">
           <h2 id="opportunities-title">Open to opportunities</h2>
           <p>
-            I am preparing for entry-level opportunities in Agentic AI,
+            I am preparing for entry-to-mid level opportunities in Agentic AI,
             Generative AI, LLM engineering and AI automation across Hyderabad,
             Bengaluru and remote teams.
           </p>

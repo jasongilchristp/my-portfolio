@@ -19,7 +19,7 @@ export default function Home() {
         </p>
 
         <p className="home__availability">
-          Open to entry-level opportunities in Hyderabad, Bengaluru and remote
+          Open to entry-to-mid level opportunities in Hyderabad, Bengaluru and remote
           teams.
         </p>
 

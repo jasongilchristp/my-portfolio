@@ -47,15 +47,6 @@ export default function NavBar() {
         </div>
 
         <div className="navbar__actions">
-          <button
-            type="button"
-            className="switch"
-            onClick={switchElement}
-            aria-label="Toggle theme"
-          >
-            <span className="flicker"></span>
-            <span className="moon"></span>
-          </button>
 
           <button
             type="button"

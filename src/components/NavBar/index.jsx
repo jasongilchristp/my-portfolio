@@ -13,13 +13,15 @@ const navItems = [
 export default function NavBar() {
   const [location] = useLocation();
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
-  const [open, setOpen] = useState(window.innerWidth > 800);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth <= 800;
       setIsMobile(mobile);
-      setOpen(!mobile);
+      if (!mobile) {
+        setOpen(false);
+      }
     };
 
     handleResize();
@@ -28,10 +30,8 @@ export default function NavBar() {
   }, []);
 
   useEffect(() => {
-    if (isMobile) {
-      setOpen(false);
-    }
-  }, [location, isMobile]);
+    setOpen(false);
+  }, [location]);
 
   const switchElement = () => {
     document.body.classList.toggle("dark");
@@ -60,10 +60,10 @@ export default function NavBar() {
           <button
             type="button"
             className="navbar__toggle"
+            onClick={() => setOpen(true)}
+            aria-label="Open navigation menu"
             aria-expanded={open}
-            aria-controls="primary-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((prev) => !prev)}
+            aria-controls="mobile-menu"
           >
             <span></span>
             <span></span>
@@ -71,26 +71,66 @@ export default function NavBar() {
           </button>
         </div>
 
-        <div className="list-wrapper">
-          <ul
-            id="primary-menu"
-            className={`navbar__menu ${open ? "is-open" : ""}`}
-          >
-            {navItems.map(({ label, href }) => (
-              <li key={href}>
+        {!isMobile && (
+          <ul className="navbar__desktop">
+            {navItems.map((item) => (
+              <li key={item.href}>
                 <Link
-                  href={href}
-                  onClick={() => isMobile && setOpen(false)}
-                  className={location === href ? "is-active" : ""}
-                  aria-current={location === href ? "page" : undefined}
+                  href={item.href}
+                  className={location === item.href ? "is-active" : ""}
+                  aria-current={location === item.href ? "page" : undefined}
                 >
-                  {label}
+                  {item.label}
                 </Link>
               </li>
             ))}
           </ul>
-        </div>
+        )}
       </div>
+
+      {isMobile && (
+        <>
+          <div
+            className={`navbar__overlay ${open ? "is-open" : ""}`}
+            onClick={() => setOpen(false)}
+            aria-hidden={!open}
+          />
+
+          <aside
+            id="mobile-menu"
+            className={`navbar__drawer ${open ? "is-open" : ""}`}
+            aria-label="Mobile navigation"
+          >
+            <div className="navbar__drawer-header">
+              <p>Menu</p>
+              <button
+                type="button"
+                className="navbar__close"
+                onClick={() => setOpen(false)}
+                aria-label="Close navigation menu"
+              >
+                ×
+              </button>
+            </div>
+
+            <ul className="navbar__mobile">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={location === item.href ? "is-active" : ""}
+                    aria-current={location === item.href ? "page" : undefined}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        </>
+      )}
     </nav>
   );
 }
+

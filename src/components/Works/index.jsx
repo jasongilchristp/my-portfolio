@@ -4,12 +4,12 @@ const experiences = [
   {
     title: "Career Break and Technical Upskilling",
     company: "Independent Learning",
-    period: "Jun 2023 – Present",
+    period: "May 2023 – Present",
     type: "Current focus",
     description:
       "Preparing for a structured return to technology roles while building practical capability in data science, machine learning, Generative AI and Agentic AI.",
     highlights: [
-      "Currently enrolled in the Agentic AI 3.0 programme.",
+      "Pursuing advanced technical specialization in Agentic AI architectures, tool-calling systems and autonomous workflows.",
       "Building hands-on capability in Python, RAG, LangChain, LangGraph, Pydantic, APIs, SQL, Git and Docker.",
       "Developing portfolio projects focused on agentic workflows, retrieval-augmented generation and AI automation.",
     ],

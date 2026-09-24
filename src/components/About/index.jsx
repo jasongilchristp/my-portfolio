@@ -3,6 +3,7 @@ import "./style.css";
 const focusAreas = [
   "Agentic AI systems",
   "RAG applications",
+  "MCP servers",
   "LLM workflows",
   "AI automation",
 ];
@@ -12,6 +13,7 @@ const coreSkills = [
   "LangChain",
   "LangGraph",
   "RAG",
+  "FastMCP",
   "Pydantic",
   "SQL",
   "APIs",
@@ -57,8 +59,7 @@ export default function About() {
           <p>
             After a health-related career break, I have been steadily
             upskilling in data science, machine learning, Generative AI and
-            Agentic AI. I am currently enrolled in the Agentic AI 3.0
-            programme and building hands-on projects as I prepare to return to
+            Agentic AI as I prepare to return to
             full-time technology roles.
           </p>
           <p>

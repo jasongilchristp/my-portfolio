@@ -6,6 +6,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Skills", href: "/skills" },
+  { label: "Projects", href: "/projects" },
   { label: "Works", href: "/works" },
   { label: "Contact", href: "/contact" },
 ];
@@ -33,9 +34,6 @@ export default function NavBar() {
     setOpen(false);
   }, [location]);
 
-  const switchElement = () => {
-    document.body.classList.toggle("dark");
-  };
 
   return (
     <nav className="navbar" aria-label="Primary">

@@ -7,11 +7,12 @@ const skillGroups = [
     skills: [
       "Agentic AI",
       "Generative AI",
-      "Retrieval-Augmented Generation (RAG)",
       "LangChain",
       "LangGraph",
+      "Retrieval-Augmented Generation (RAG)",
+      "Model Context Protocol (MCP)",
       "Prompt Engineering",
-      "Pydantic",
+      "Pydantic"
     ],
   },
   {
@@ -60,7 +61,7 @@ export default function Skills() {
         <h1 id="skills-title">Skills and focus areas</h1>
         <p className="skills__lead">
           My skill set combines CRM workflow automation experience with an
-          active focus on Generative AI, RAG and Agentic AI systems.
+          active focus on Generative AI, RAG, MCP and Agentic AI systems.
         </p>
       </header>
 
@@ -86,8 +87,7 @@ export default function Skills() {
       </div>
 
       <p className="skills__note">
-        I am continuing to strengthen these skills through the Agentic AI 3.0
-        programme and hands-on portfolio projects.
+        I am continuing to strengthen these skills through continuous learning & hands-on projects.
       </p>
     </main>
   );
